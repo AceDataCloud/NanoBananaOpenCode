@@ -50,3 +50,5 @@ pending/processing不代表失败，预览URL不算完成；不要再生成来�
 
 401/403查Token/权限/有效期/限制/余额；429/5xx/超时先查原task，不向支持人员发Key。用户已有同名MCP优先，插件不覆盖。
 聊天费与服务费分开；安装/连接不证明最终结果、唯一账单或营收。[反馈](https://github.com/AceDataCloud/NanoBananaOpenCode/issues)。
+
+[复现无需凭据/生成的真实宿主包检查](../docs/VERIFY.md)，不等于完整生成、官方收录或账单验收。

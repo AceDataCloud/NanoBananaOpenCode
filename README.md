@@ -82,3 +82,5 @@ The existing MCP owns response normalization; inspect its current returned statu
 
 Model chat and Nano Banana charges are separate. Installation/connection is not final
 media, unique billing or customer-revenue proof. [Report a problem](https://github.com/AceDataCloud/NanoBananaOpenCode/issues).
+
+[Reproduce the free packed-package host check](docs/VERIFY.md). This is not a generation, official-listing or billing test.
