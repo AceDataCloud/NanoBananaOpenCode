@@ -4,16 +4,33 @@
 复用 [NanoBananaMCP](https://github.com/AceDataCloud/NanoBananaMCP)，不复制 API、Schema 或计费实现。
 这是 Ace 提供的独立集成，不是 Nano Banana / OpenCode 官方产品。[English](../README.md)。
 
-## 1. 安装
+## 1. 安装已合并插件
 
-先 `opencode --version` 核对为2，1的插件API不同。[官方安装说明](https://opencode.ai/v2/docs/plugins/)。
-源码PR为候选，main尚无实现，npm未发布、官方目录未收录。审查代码后：
+要求 **OpenCode 2.0.26+**，先 `opencode --version` 核对。OpenCode 1 的插件API不同。
+[官方插件管理器](https://opencode.ai/v2/docs/plugins/)。
+
+实现已进入 `main`，可通过官方Git包机制安装：
 
 ```bash
-opencode plugin add 'git+ssh://git@github.com/AceDataCloud/NanoBananaOpenCode.git#codex/native-service-plugin'
+opencode plugin add github:AceDataCloud/NanoBananaOpenCode
 ```
 
-也可使用 `github:AceDataCloud/NanoBananaOpenCode#codex/native-service-plugin`。main经审查发布后先移除同候选目标，再装主线，不重复安装。
+需要固定版本时使用 **v0.1.0** Git版本：
+
+```bash
+opencode plugin add 'github:AceDataCloud/NanoBananaOpenCode#v0.1.0'
+```
+
+HTTPS快捷地址受本机网络影响时，可沿用已有GitHub SSH访问：
+
+```bash
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/NanoBananaOpenCode.git#v0.1.0'
+```
+
+[发行说明与源码归档](https://github.com/AceDataCloud/NanoBananaOpenCode/releases/tag/v0.1.0)。
+Git版本与npm发布分开记，本文不宣称npm已发布；[官方社区目录投稿](https://github.com/anomalyco/opencode/pull/56666)仍待审，非官方背书或产品内商城上架。
+此前装过候选分支时先用 `opencode plugin remove` 移除原完整目标，再装正式目标，只保留一份。
+安装添加 **Nano Banana by Ace Data Cloud** 的原生Key/env入口、固定托管MCP与任务Skill，不替你选择聊天模型，也不自动授权生成。
 
 ## 2. 注册登录与API Token
 
