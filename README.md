@@ -6,20 +6,38 @@ with a native `/connect` credential entry, hosted MCP and task Skill. It reuses
 Independent Ace integration; not made or endorsed by Nano Banana or OpenCode.
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md).
 
-## 1. Install through OpenCode
+## 1. Install the released plugin
 
-Check `opencode --version`. OpenCode 1 uses a different plugin API.
-[Official plugin installation](https://opencode.ai/v2/docs/plugins/).
-The source PR is a candidate: main has no released plugin yet; npm is not published
-and official ecosystem inclusion is not claimed. Review the branch, then install:
+Requires **OpenCode 2.0.26+**. Check `opencode --version`; OpenCode 1 has a different plugin API.
+See [OpenCode's plugin manager](https://opencode.ai/v2/docs/plugins/).
+
+The implementation is merged on `main`. Install through the official Git-package mechanism:
 
 ```bash
-opencode plugin add 'git+ssh://git@github.com/AceDataCloud/NanoBananaOpenCode.git#codex/native-service-plugin'
+opencode plugin add github:AceDataCloud/NanoBananaOpenCode
 ```
 
-GitHub shortcut: `opencode plugin add 'github:AceDataCloud/NanoBananaOpenCode#codex/native-service-plugin'`.
-After reviewed main is published, remove the candidate with `opencode plugin remove`
-using the same target, then install `github:AceDataCloud/NanoBananaOpenCode`. Never install both.
+For a fixed version, use the **v0.1.0** Git release:
+
+```bash
+opencode plugin add 'github:AceDataCloud/NanoBananaOpenCode#v0.1.0'
+```
+
+If your network cannot reach the HTTPS shortcut, the official Git SSH form uses your existing GitHub SSH access:
+
+```bash
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/NanoBananaOpenCode.git#v0.1.0'
+```
+
+[Release notes and source archive](https://github.com/AceDataCloud/NanoBananaOpenCode/releases/tag/v0.1.0).
+Git release and npm publication are separate: npm availability is not claimed here.
+The [OpenCode community-directory submission](https://github.com/anomalyco/opencode/pull/56666)
+remains under review and is not an endorsement or an in-product marketplace listing.
+If you installed an earlier candidate target, remove that exact target with `opencode plugin remove`
+before adding the released target. Install only one copy.
+
+Installing registers **Nano Banana by Ace Data Cloud** as a native key/env connection,
+a fixed hosted MCP server, and a task Skill. It does not select your chat model or authorize generation.
 
 ## 2. Register/sign in and get the right token
 
